@@ -13,7 +13,7 @@ export default function item() {
       <Weapon/>
       <Monster/>
       <Store/>
-      
+      <Footer/>
     </>
   )
 }
