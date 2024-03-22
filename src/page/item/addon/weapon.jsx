@@ -120,7 +120,7 @@ export default function weapon() {
             </div>
             {
               (category === "item" ? 
-              <div className="menu-list-info" style={{ display: 'flex', flexDirection: 'column', marginTop: '1rem', }}>
+              <div className="menu-list-info" style={{ display: 'flex', flexDirection: 'column', marginTop: '1rem', gap: '7px' }}>
                 <h3>หมวดหมู่</h3>
                 {categoryItemHTML}
               </div>

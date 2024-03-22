@@ -15,7 +15,6 @@ nav {
     position: sticky;
     top: 0;
     z-index: 99999;
-    overflow: hidden;
 }
 
 .nav-con {
@@ -34,7 +33,7 @@ nav {
 
 .menu li {
     list-style: none;
-    padding: 0 7rem;
+    padding: 0 5rem;
 }
 
 .menu li a {
@@ -290,3 +289,4 @@ footer {
         opacity: 1;
     }
 }
+

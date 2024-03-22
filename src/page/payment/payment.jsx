@@ -23,12 +23,12 @@ export default function payment() {
           </div>
 
           <div className="pay-bottom mt-4 text-center">
-            <input type="file" />
+            <input type="file" name="" id="" />
           </div>
 
 
           <div className="btn-confirm mt-4 text-center pb-3">
-            <button className='btn btn-success' style={{width: '300px'}}>ยืนยันการเติมเงิน</button>
+            <button className='btn btn-success' style={{ width: '300px' }}>ยืนยันการเติมเงิน</button>
           </div>
 
         </div>

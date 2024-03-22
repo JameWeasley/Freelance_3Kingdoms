@@ -10,7 +10,7 @@ export default function nav() {
                         <img src="/public/logo.png" width="250" alt="" />
                     </div>
 
-                    <ul className="menu" style={{whiteSpace: 'nowrap'}}>
+                    <ul className="menu" style={{whiteSpace: 'nowrap', paddingLeft: '0'}}>
                         <li><a href="/">หน้าแรก</a></li>
                         <li><a href="/item">ข้อมูล</a></li>
                         <li><a href="/register">เข้าสู่ระบบ</a></li>
