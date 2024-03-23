@@ -1,66 +1,77 @@
-import React , { useState , useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 export default function weapon() {
-  
-  const [ category , setCategory ] = useState('item')
-  const [ categoryItem , setcategoryItem ] = useState('all')
-  const [ categoryItemHTML , setcategoryItemHTML ] = useState('')
-  const [ itemHTML , setitemHTML ] = useState('')
+  const [category, setCategory] = useState("item");
+  const [categoryItem, setcategoryItem] = useState("all");
+  const [categoryItemHTML, setcategoryItemHTML] = useState("");
+  const [itemHTML, setitemHTML] = useState("");
   useEffect(() => {
-    const text = []
+    const text = [];
     if (category === "item") {
       text.push(
         <>
-            <div className="item-blog">
-              <div className="img-blog">
-                <img src="i1.bmp" alt="" />
-              </div>
-              <p>กระบี่ตรง</p>
-              <button className='btn btn-dark' onClick={showWeapon}>รายละเอียด</button>
-
-
+          <div className="item-blog">
+            <div className="img-blog">
+              <img src="i1.bmp" alt="" />
             </div>
+            <p>กระบี่ตรง</p>
+            <button className="btn btn-dark" onClick={showWeapon}>
+              รายละเอียด
+            </button>
+          </div>
         </>
-      )
-    }else if (category === "monster"){
+      );
+    } else if (category === "monster") {
       text.push(
         <>
-            <div className="item-blog">
-              <div className="img-blog">
-                <img src="i1.bmp" alt="" />
-              </div>
-              <p>มอนเตอร์</p>
-              <button className='btn btn-dark' onClick={showWeapon}>รายละเอียด</button>
-
-
+          <div className="item-blog">
+            <div className="img-blog">
+              <img src="i1.bmp" alt="" />
             </div>
+            <p>มอนเตอร์</p>
+            <button className="btn btn-dark" onClick={showWeapon}>
+              รายละเอียด
+            </button>
+          </div>
         </>
-      )
-    }else if (category === "store") {
+      );
+    } else if (category === "store") {
       text.push(
         <>
-            <div className="item-blog">
-              <div className="img-blog">
-                <img src="i1.bmp" alt="" />
-              </div>
-              <p>ร้านค้า</p>
-              <button className='btn btn-dark' onClick={showWeapon}>รายละเอียด</button>
-
-
+          <div className="item-blog">
+            <div className="img-blog">
+              <img src="i1.bmp" alt="" />
             </div>
+            <p>ร้านค้า</p>
+            <button className="btn btn-dark" onClick={showWeapon}>
+              รายละเอียด
+            </button>
+          </div>
         </>
-      )
+      );
     }
 
-    setitemHTML(text)
-  } , [category])
+    setitemHTML(text);
+  }, [category]);
 
   useEffect(() => {
-    const text = []
+    const text = [];
     text.push(
       <>
-        <span data-name="all" className={( categoryItem === "all" ? 'activemenu' : '' )} onClick={clickCategory}>ทั้งหมด</span>
-        <span data-name="weapon" className={( categoryItem === "weapon" ? 'activemenu' : '' )} onClick={clickCategory}>อาวุธ</span>
+        <span
+          data-name="all"
+          className={categoryItem === "all" ? "activemenu" : ""}
+          onClick={clickCategory}
+        >
+          ทั้งหมด
+        </span>
+        <span
+          data-name="weapon"
+          className={categoryItem === "weapon" ? "activemenu" : ""}
+          onClick={clickCategory}
+        >
+          อาวุธ
+        </span>
         {/* <span>ทั้งหมด</span>
         <span>ทั้งหมด</span>
         <span>ทั้งหมด</span>
@@ -74,88 +85,134 @@ export default function weapon() {
         <span>ทั้งหมด</span>
         <span>ทั้งหมด</span> */}
       </>
-    )
+    );
 
-    setcategoryItemHTML(text)
-   
-  } , [categoryItem])
+    setcategoryItemHTML(text);
+  }, [categoryItem]);
 
   const showWeapon = () => {
-    const wpn = document.getElementById('show')
-    wpn.style.display = 'block'
-  }
+    const wpn = document.getElementById("show");
+    const bg = document.getElementById("root");
+    bg.style.background = "rgba(0, 0, 0, 0.7)";
+    wpn.style.display = "block";
+    bg.style.transition = "0.3s"
+  };
 
   const close = () => {
-    const cl = document.querySelector('.weapon-detail')
-    cl.style.display = "none"
-
-  }
+    const cl = document.querySelector(".weapon-detail");
+    const bg = document.getElementById("root");
+    cl.style.display = "none";
+    bg.style.background = "";
+  };
 
   let currentIndex = 0; // เริ่มต้นที่ index 0 (menu-list-info)
 
   const changeList = (e) => {
-    setCategory(e.currentTarget.value)
-  }
+    setCategory(e.currentTarget.value);
+  };
 
   const clickCategory = (e) => {
-    setcategoryItem(e.currentTarget.dataset.name)
-  }
+    setcategoryItem(e.currentTarget.dataset.name);
+  };
 
   return (
     <>
-
-      <div className="container">
-        <div className="menu-list" style={{ display: 'flex', justifyContent: 'center', margin: '5rem 0' }}>
+      <div className="container" style={{minHeight: '900px'}}>
+        <div
+          className="menu-list"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "5rem 0",
+          }}
+        >
           <div className="menu-list-detail">
-            <div className="menu-select" style={{ textAlign: 'center' }}>
-              <select onChange={changeList} style={{ textAlign: 'center', width: '100%', border: 'none', outline: 'none', borderRadius: '5px', padding: '5px' }} >
+            <div className="menu-select" style={{ textAlign: "center" }}>
+              <select
+                onChange={changeList}
+                style={{
+                  textAlign: "center",
+                  width: "100%",
+                  border: "none",
+                  outline: "none",
+                  borderRadius: "5px",
+                  padding: "5px",
+                }}
+              >
                 <option value="item">ไอเทม</option>
                 <option value="monster">มอนส์เตอร์</option>
                 <option value="store">ร้านค้า</option>
               </select>
             </div>
 
-            <div className="menu-search" style={{ marginTop: '1rem' }}>
-              <input type="search" placeholder='ค้นหา' style={{ height: '50px', border: 'none', outline: 'none', borderRadius: '5px', padding: '0 10px' }} />
+            <div className="menu-search" style={{ marginTop: "1rem" }}>
+              <input
+                type="search"
+                placeholder="ค้นหา"
+                style={{
+                  height: "50px",
+                  border: "none",
+                  outline: "none",
+                  borderRadius: "5px",
+                  padding: "0 10px",
+                }}
+              />
             </div>
-            {
-              (category === "item" ? 
-              <div className="menu-list-info" style={{ display: 'flex', flexDirection: 'column', marginTop: '1rem', gap: '7px' }}>
+            {category === "item" ? (
+              <div
+                className="menu-list-info"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginTop: "1rem",
+                  gap: "7px",
+                }}
+              >
                 <h3>หมวดหมู่</h3>
                 {categoryItemHTML}
               </div>
-              :
-              '')
-            }
+            ) : (
+              ""
+            )}
 
-            {
-              (category === "monster" ? 
-              <div className="menu-list-monster" style={{ display: 'flex', flexDirection: 'column', marginTop: '1rem', }}>
-              <span>ระดับ 1 - 50</span>
-              <span>ระดับ 51 - 100</span>
-              <span>ระดับ 101 - 150</span>
-              <span>ระดับ 151 - 200</span>
-              <span>ระดับ 201 - 250</span>
-              <span>ระดับ 251 - 300</span>
-            </div>
-              : '')
-            }
-           
-            {
-              (category === "store" ? 
+            {category === "monster" ? (
+              <div
+                className="menu-list-monster"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginTop: "1rem",
+                }}
+              >
+                <span>ระดับ 1 - 50</span>
+                <span>ระดับ 51 - 100</span>
+                <span>ระดับ 101 - 150</span>
+                <span>ระดับ 151 - 200</span>
+                <span>ระดับ 201 - 250</span>
+                <span>ระดับ 251 - 300</span>
+              </div>
+            ) : (
+              ""
+            )}
+
+            {category === "store" ? (
               <div className="menu-list-store">
-              <input type="search" />
-            </div>
-              : '')
-            }
-         
-
-           
+                <button className="btn btn-dark w-100 mt-4">ค้นหา</button>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
 
-
-
-          <div className="item-list" style={{ marginLeft: '5rem', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gridGap: '20px' }}>
+          <div
+            className="item-list"
+            style={{
+              marginLeft: "5rem",
+              display: "grid",
+              gridTemplateColumns: "repeat(5, 1fr)",
+              gridGap: "20px",
+            }}
+          >
             {itemHTML}
             {/* <div className="item-blog">
               <div className="img-blog">
@@ -321,19 +378,32 @@ export default function weapon() {
           </div>
         </div>
 
-        <div className="weapon-detail" id='show' style={{ position: 'absolute', transform: 'translate(-50%, -50%)', top: '50%', left: '50%' }}>
-          <div className="wep-head">
-            <h3>รายละเอียด</h3>
-            <h5>กระบี่</h5>
-
-
-
+        <div className="weapon-detail" id="show">
+          <div className="bg-popup"></div>
+          <div className="weapon-page">
+            <div className="wep-head">
+              <h3>รายละเอียด กระบี่</h3>
+            </div>
+            <div className="detail-item">
+              <p>เลเวล : </p>
+              <p>พลังกาย : </p>
+              <p>พลังโจมตี : </p>
+              <p>ความเร็วโจมตี : </p>
+              <p>โจมตีแทง : </p>
+              <p>ปัญญา : </p>
+              <p>กาย : </p>
+              <p>คุม : </p>
+              <p>ค่าประสบการณ์ : </p>
+              <p>พลังสกิล : </p>
+            </div>
+            <button className="btn btn-dark" onClick={close} style={{float: 'inline-end'}}>
+            ปิด
+          </button>
           </div>
-          <button className='btn btn-dark' onClick={close}>ปิด</button>
+
+          
         </div>
-
       </div>
-
     </>
-  )
+  );
 }
