@@ -3,28 +3,6 @@ import Splide from "@splidejs/splide";
 import "@splidejs/splide/css";
 
 export default function headInfo() {
-  // const start = useRef(false);
-
-  // useEffect(() => {
-  //   if (!start.current) {
-  //     start.current = true;
-  //     new Splide(".splide", {
-  //       type: "loop",
-  //       // autoplay: 'true',
-  //       // interval: '2500',
-  //       perPage: 3,
-  //       perMove: 1,
-  //       focus: "center",
-  //       pagination: false,
-  //       drag: false,
-
-  //       classes: {
-  //         prev: "splide__arrow--prev prev-arrow-prev",
-  //         next: "splide__arrow--next prev-arrow-next",
-  //       },
-  //     }).mount();
-  //   }
-  // }, []);
 
   const start = useRef(false);
 
@@ -33,8 +11,8 @@ useEffect(() => {
     start.current = true;
     const splideOptions = {
       type: "loop",
-      // autoplay: 'true',
-      // interval: '2500',
+      autoplay: 'true',
+      interval: '2500',
       perMove: 1,
       focus: "center",
       pagination: false,
@@ -45,15 +23,14 @@ useEffect(() => {
       },
     };
 
-    // Define a function to update Splide options based on the screen size
     const updateSplideOptions = () => {
       const windowWidth = window.innerWidth;
       if (windowWidth >= 1024) {
-        splideOptions.perPage = 3; // Show 3 slides per page for large screens
+        splideOptions.perPage = 3; 
       } else if (windowWidth >= 768) {
-        splideOptions.perPage = 1; // Show 2 slides per page for medium screens
+        splideOptions.perPage = 1;
       } else {
-        splideOptions.perPage = 1; // Show 1 slide per page for small screens (e.g., mobile)
+        splideOptions.perPage = 1; 
       }
       return splideOptions;
     };

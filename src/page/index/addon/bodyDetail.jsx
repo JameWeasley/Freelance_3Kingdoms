@@ -10,22 +10,24 @@ export default function bodyDetail() {
     })
     e.currentTarget.classList.add('active')
   }
-  
+
 
   return (
     <>
 
       <div className="container">
-        <div className="img-head" style={{ margin: '4rem 0 4rem 0', display: 'flex', justifyContent: 'center' }}>
-          <img src="camp_cha_01_01.png" width="800px" alt="" />
+        <div className="img-head" style={{ margin: '4rem 0 4rem 0', display: 'flex', justifyContent: 'center', }}>
+          <img src="camp_cha_01_01.png" width="800px" alt="" style={{ objectFit: 'contain' }} />
 
           <div className="img-body" style={{ marginTop: '200px', position: 'relative' }}>
             <img src="camp_paper.png" width="450" alt="" />
-            <p type="text" style={{ position: 'absolute', top: '80px', left: '50px', width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2021</p>
-            <p type="text" style={{ position: 'absolute', top: '160px', left: '50px', width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2022</p>
-            <p type="text" style={{ position: 'absolute', top: '240px', left: '50px', width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2023</p>
-            <p type="text" style={{ position: 'absolute', top: '320px', left: '50px', width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2024</p>
-            <p type="text" style={{ position: 'absolute', top: '400px', left: '50px', width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' , whiteSpace: 'nowrap' }}>อัพเดท ข้อมูลข่าวสารเกม !!! ล่าสุด</p>
+            <div className="text-update" style={{ position: 'absolute' }}>
+              <p type="text" style={{width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2021</p>
+              <p type="text" style={{width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2022</p>
+              <p type="text" style={{width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2023</p>
+              <p type="text" style={{width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '' }}>อัพเดท ข้อมูลข่าวสารเกม 2024</p>
+              <p type="text" style={{width: '70%', height: '50px', padding: '1rem', fontSize: '20px', border: 'none', background: 'transparent', outline: '', whiteSpace: 'nowrap' }}>อัพเดท ข้อมูลข่าวสารเกม !!! ล่าสุด</p>
+            </div>
           </div>
         </div>
 
