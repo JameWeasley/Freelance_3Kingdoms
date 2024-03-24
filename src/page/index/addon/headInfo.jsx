@@ -25,10 +25,12 @@ useEffect(() => {
 
     const updateSplideOptions = () => {
       const windowWidth = window.innerWidth;
-      if (windowWidth >= 1024) {
-        splideOptions.perPage = 3; 
-      } else if (windowWidth >= 768) {
+      if (windowWidth > 1199) {
+        splideOptions.perPage = 3;
+      } else if (windowWidth <= 1024) {
         splideOptions.perPage = 1;
+      } else if (windowWidth <= 768) {
+        splideOptions.perPage = 1; 
       } else {
         splideOptions.perPage = 1; 
       }

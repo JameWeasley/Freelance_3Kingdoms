@@ -14,7 +14,7 @@ export default function payment() {
           </div>
         </div>
 
-        <div className="pay-body" style={{ width: '50%', margin: '0 auto', border: 'none', borderRadius: '10px', padding: '10px', background: 'linear-gradient(rgb(0 0 0 / 36%), rgba(237, 237, 237, 0.51))' }}>
+        <div className="pay-body" style={{ width: '100%', margin: '0 auto', border: 'none', borderRadius: '10px', padding: '10px', background: 'linear-gradient(rgb(0 0 0 / 36%), rgba(237, 237, 237, 0.51))' }}>
           <h3 style={{ borderBottom: '1px solid #fff' }}>เติมเงิน</h3>
           <h3 style={{ textAlign: 'center', padding: '1rem' }} >1 บามมีค่า 100 point</h3>
 
