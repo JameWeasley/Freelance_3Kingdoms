@@ -382,6 +382,13 @@ footer {
     }
 }
 
+@media (min-width: 320px) and (max-width: 424px) {
+    .item-list {
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
 @media (min-width: 320px) and (max-width: 800px) {
     .player {
         overflow: scroll;

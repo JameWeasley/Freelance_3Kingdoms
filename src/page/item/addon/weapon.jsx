@@ -208,7 +208,8 @@ export default function weapon() {
           <div
             className="item-list"
             style={{
-              marginLeft: "5rem",
+              marginLeft: "3rem",
+              marginRight: "3rem",
               display: "grid",
               gridTemplateColumns: "repeat(5, 1fr)",
               gridGap: "20px",
