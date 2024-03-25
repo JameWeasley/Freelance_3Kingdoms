@@ -27,6 +27,7 @@ export default function nav() {
                         <li><a href="/item">ข้อมูล</a></li>
                         <li><a href="/register">เข้าสู่ระบบ</a></li>
                         <li><a href="/payment">เติมเงิน</a></li>
+                        <li><a href="/admin">แอดมิน</a></li>
                     </ul>
                     
                 </div>
@@ -42,6 +43,7 @@ export default function nav() {
                         <li><a href="/item">ข้อมูล</a></li>
                         <li><a href="/register">เข้าสู่ระบบ</a></li>
                         <li><a href="/payment">เติมเงิน</a></li>
+                        <li><a href="/admin">แอดมิน</a></li>
                     </ul>
 
             </div>

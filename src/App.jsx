@@ -8,8 +8,10 @@ import RegisterPage from './page/login/register'
 import LoginPage from './page/login/login'
 import ItemPage from './page/item/item'
 import PaymentPage from './page/payment/payment'
+import AdminPage from './page/admin/admin'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +25,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/item" element={<ItemPage />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </Router>
     </>

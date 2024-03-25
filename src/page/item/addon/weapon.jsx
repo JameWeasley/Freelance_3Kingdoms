@@ -93,9 +93,10 @@ export default function weapon() {
   const showWeapon = () => {
     const wpn = document.getElementById("show");
     const bg = document.getElementById("root");
+    const dtItem = document.querySelector("detail-item")
     bg.style.background = "rgba(0, 0, 0, 0.7)";
     wpn.style.display = "block";
-    bg.style.transition = "0.3s"
+    bg.style.transition = "0.3s";
   };
 
   const close = () => {
@@ -117,7 +118,7 @@ export default function weapon() {
 
   return (
     <>
-      <div className="container" style={{minHeight: '900px'}}>
+      <div className="container" style={{ minHeight: '900px' }}>
         <div
           className="menu-list"
           style={{
@@ -214,7 +215,7 @@ export default function weapon() {
             }}
           >
             {itemHTML}
-            {/* <div className="item-blog">
+            <div className="item-blog">
               <div className="img-blog">
                 <img src="i1.bmp" alt="" />
               </div>
@@ -224,15 +225,7 @@ export default function weapon() {
 
             </div>
 
-            <div className="item-blog">
-              <div className="img-blog">
-                <img src="i1.bmp" alt="" />
-              </div>
-              <p>กระบี่ตรง</p>
-              <button>รายละเอียด</button>
-            </div>
-
-            <div className="item-blog">
+            {/* <div className="item-blog">
               <div className="img-blog">
                 <img src="i1.bmp" alt="" />
               </div>
@@ -375,8 +368,20 @@ export default function weapon() {
               <p>กระบี่ตรง</p>
               <button>รายละเอียด</button>
             </div> */}
+
           </div>
         </div>
+
+        <div className="pagination" style={{ justifyContent: 'center', marginLeft: '20%' }}>
+            <ul style={{ display: 'flex' }}>
+              <li><a href="">Prev</a></li>
+              <li><a href="" className="active-pagination">1</a></li>
+              <li><a href="">2</a></li>
+              <li><a href="">3</a></li>
+              <li><a href="">4</a></li>
+              <li><a href="">Next</a></li>
+            </ul>
+          </div>
 
         <div className="weapon-detail" id="show">
           <div className="bg-popup"></div>
@@ -396,12 +401,12 @@ export default function weapon() {
               <p>ค่าประสบการณ์ : </p>
               <p>พลังสกิล : </p>
             </div>
-            <button className="btn btn-dark" onClick={close} style={{float: 'inline-end'}}>
-            ปิด
-          </button>
+            <button className="btn btn-dark" onClick={close} style={{ float: 'inline-end' }}>
+              ปิด
+            </button>
           </div>
 
-          
+
         </div>
       </div>
     </>
