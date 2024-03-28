@@ -7,6 +7,8 @@ export default function admin() {
   const [categoryItem, setcategoryItem] = useState("all");
   const [categoryItemHTML, setcategoryItemHTML] = useState("");
   const [itemHTML, setitemHTML] = useState("");
+  const [newsHTML, setnewsHTML] = useState("");
+
   useEffect(() => {
     const text = [];
     if (category === "item") {
@@ -60,6 +62,17 @@ export default function admin() {
           </div>
         </>
       );
+    } else if (category === "news") {
+      text.push(
+        <>
+          <div className="container">
+            <div className="new-info" style={{ width: '500px' }}>
+              <input type="text" style={{ width: '100%', border: 'none', outline: 'none', padding: '10px' }} />
+              <button className="btn btn-dark" style={{ width: '100% ', marginTop: '20px' }}>เพิ่มประกาศ</button>
+            </div>
+          </div>
+        </>
+      )
     }
 
     setitemHTML(text);
@@ -118,7 +131,7 @@ export default function admin() {
   return (
     <>
 
-    <Navbar/>
+      <Navbar />
       <div className="container" style={{ minHeight: '900px' }}>
         <div
           className="menu-list"
@@ -219,23 +232,24 @@ export default function admin() {
             }}
           >
             {itemHTML}
-            
 
 
-            
+
+
           </div>
         </div>
 
+
         <div className="pagination" style={{ justifyContent: 'center', marginLeft: '20%' }}>
-            <ul style={{ display: 'flex' }}>
-              <li><a href="">Prev</a></li>
-              <li><a href="" className="active-pagination">1</a></li>
-              <li><a href="">2</a></li>
-              <li><a href="">3</a></li>
-              <li><a href="">4</a></li>
-              <li><a href="">Next</a></li>
-            </ul>
-          </div>
+          <ul style={{ display: 'flex' }}>
+            <li><a href="">Prev</a></li>
+            <li><a href="" className="active-pagination">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">Next</a></li>
+          </ul>
+        </div>
 
         <div className="weapon-detail" id="show">
           <div className="bg-popup"></div>
