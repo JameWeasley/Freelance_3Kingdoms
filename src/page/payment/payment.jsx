@@ -33,7 +33,13 @@ export default function payment() {
 
         </div>
 
-
+        <div className="social-fixed">
+        <ul className="menu-social">
+          <li><a href="#">FaceBook</a></li>
+          <li><a href="#">Line</a></li>
+          <li><a href="#">Youtube</a></li>
+        </ul>
+      </div>
 
 
       </div>
