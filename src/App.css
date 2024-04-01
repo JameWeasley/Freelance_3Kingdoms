@@ -522,3 +522,22 @@ footer {
 .active-pagination {
     background-color: royalblue !important;
 }
+
+.social-fixed {
+    position: fixed;
+    z-index: 999;
+    top: 60vh;
+    right: 1vw;
+}
+
+.menu-social li {
+    list-style: none;
+    border: 1px solid;
+    margin: 1px 0;
+    background: #333;
+}
+
+.menu-social li a {
+    text-decoration: none;
+    color: #fff;
+}

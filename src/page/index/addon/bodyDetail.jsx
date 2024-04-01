@@ -61,16 +61,6 @@ export default function bodyDetail() {
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
       <div className="container">
         <div className="body-detail">
           <div className="img-gif">
@@ -93,6 +83,14 @@ export default function bodyDetail() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="social-fixed">
+        <ul className="menu-social">
+          <li><a href="#">FaceBook</a></li>
+          <li><a href="#">Line</a></li>
+          <li><a href="#">Youtube</a></li>
+        </ul>
       </div>
     </>
   )
