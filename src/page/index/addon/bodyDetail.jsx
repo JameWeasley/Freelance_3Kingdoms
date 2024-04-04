@@ -87,9 +87,10 @@ export default function bodyDetail() {
 
       <div className="social-fixed">
         <ul className="menu-social">
-          <li><a href="#">FaceBook</a></li>
+          <li>
+            <a href="#"><img src="https://cdn.logojoy.com/wp-content/uploads/20230921104407/Facebook-logo-2015_2019-600x319.png" alt="" width="100" /></a>
+          </li>
           <li><a href="#">Line</a></li>
-          <li><a href="#">Youtube</a></li>
         </ul>
       </div>
     </>
