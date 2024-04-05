@@ -35,8 +35,22 @@ export default function payment() {
 
         <div className="social-fixed">
         <ul className="menu-social">
-          <li><a href="#"></a></li>
-          <li><a href="#">Line</a></li>
+          <li>
+            <a href="#"><img src="kingdom-1.jpg" alt="" width="100" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="kingdom-1.jpg" alt="" width="100" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="kingdom-1.jpg" alt="" width="100" /></a>
+          </li>
+          <li>
+            <div className="back-totop text-center" style={{border: '1px solid #333', background: '#333'}}>
+              <a href="#">
+                <h5>TOP</h5>
+              </a>
+            </div>
+          </li>
         </ul>
       </div>
 
