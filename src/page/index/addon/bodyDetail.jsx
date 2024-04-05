@@ -88,13 +88,13 @@ export default function bodyDetail() {
       <div className="social-fixed">
         <ul className="menu-social">
           <li>
-            <a href="#"><img src="kingdom-1.jpg" alt="" width="100" /></a>
+            <a href="https://www.facebook.com/"><img src="kingdom-1.jpg" alt="" width="100" /></a>
           </li>
           <li>
-            <a href="#"><img src="kingdom-1.jpg" alt="" width="100" /></a>
+            <a href="https://www.facebook.com/"><img src="kingdom-1.jpg" alt="" width="100" /></a>
           </li>
           <li>
-            <a href="#"><img src="kingdom-1.jpg" alt="" width="100" /></a>
+            <a href="https://www.facebook.com/"><img src="kingdom-1.jpg" alt="" width="100" /></a>
           </li>
           <li>
             <div className="back-totop text-center" style={{border: '1px solid #333', background: '#333'}}>
