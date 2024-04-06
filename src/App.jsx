@@ -12,6 +12,7 @@ import AdminPage from './page/admin/admin'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import Navbar from './page/shared/nav'
+import 'sweetalert2/src/sweetalert2.scss'
 
 
 function App() {

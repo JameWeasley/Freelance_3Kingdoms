@@ -5,6 +5,7 @@ import login from '../shared/state/login'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import urlpath from '../shared/state/urlpath'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 export default function register() {
   const Location = useNavigate()
@@ -25,22 +26,24 @@ export default function register() {
     const password = document.querySelector("#reg_password_input").value
     const confirm_password = document.querySelector("#reg_confirm_password_input").value
 
-    // if (!username || !password || !confirm_password) {
-      const respone = await axios.post(`${urlpath()}/api/register` , {
-        account: username,
-        password: password,
-        confirm_password: confirm_password
-      })
-  
-      if (respone.status === 200) {
-        if (respone.data) {
-          setUsername(username)
-          // Location("/")
-        }
-      }
-    // }
+    const respone = await axios.post(`${urlpath()}/api/register` , {
+      account: username,
+      password: password,
+      confirm_password: confirm_password
+    })
 
-   
+    if (respone.status === 200) {
+      if (respone.data) {
+        setUsername(username)
+
+      } else {
+        Swal.fire({
+          title: "System",
+          text: "มีชื่อผู้ใช้นี้แล้ว",
+          icon: "error"
+      });
+      }
+    }
   }
   
   return (

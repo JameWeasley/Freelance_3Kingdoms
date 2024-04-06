@@ -29,9 +29,29 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static('dist'))
 
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
-});
+app.get("/" , (req ,res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.get("/login" , (req ,res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.get("/register" , (req ,res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.get("/admin" , (req ,res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.get("/payment" , (req ,res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.get("/item" , (req ,res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
 
 app.use(cookieSession({
     name: 'session',
@@ -73,10 +93,10 @@ app.post("/api/login" , async (req ,res ) => {
 
 app.get("/api/logout" , async (req ,res) => {
     try {
-        if (req.session?.username) {
-            req.session = null
-        }
-
+      
+        req.session = null
+       
+        console.log("clear");
         return res.send(true)
     }catch(err) {
         console.log(err);

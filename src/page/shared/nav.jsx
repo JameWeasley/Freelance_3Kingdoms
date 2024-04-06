@@ -3,6 +3,7 @@ import { useBetween } from 'use-between';
 import login from '../shared/state/login'
 import urlpath from '../shared/state/urlpath'
 import axios from 'axios';
+// import { useNavigate } from 'react-router-dom'
 
 export default function nav() {
     const [ username , setUsername ] = useBetween(login)
@@ -32,6 +33,15 @@ export default function nav() {
         }
     }
 
+    const logoutFunc = async () => {
+        const respone = await axios.get(`${urlpath()}/api/logout`)
+        if (respone.status === 200) {
+            setUsername(undefined)
+            // Location("/")
+        }
+    }
+
+
   return (
     <>
         <nav>
@@ -44,17 +54,16 @@ export default function nav() {
                     <ul className="menu" style={{whiteSpace: 'nowrap', paddingLeft: '0'}}>
                         <li><a href="/">หน้าแรก</a></li>
                         <li><a href="/item">ข้อมูล</a></li>
+                        <li><a href="/payment">เติมเงิน</a></li>
+                        <li><a href="/admin">แอดมิน</a></li>
                         { 
-                            !username ? 
+                            username === undefined ? 
                            
                                 <li><a href="/login">เข้าสู่ระบบ</a></li>
                            
                             :
-                            <li><a href="/logout">ออกจากระบบ</a></li>
+                            <li><a onClick={logoutFunc}>ออกจากระบบ</a></li>
                         }
-                       
-                        <li><a href="/payment">เติมเงิน</a></li>
-                        <li><a href="/admin">แอดมิน</a></li>
                     </ul>
                     
                 </div>

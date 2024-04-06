@@ -6,6 +6,7 @@ import axios from 'axios';
 import urlpath from '../shared/state/urlpath'
 import changeurl from '../shared/state/urlpath'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 export default function register() {
     const Location = useNavigate()
@@ -29,6 +30,12 @@ export default function register() {
             if (respone.status === 200) {
                 if (respone.data) {
                     setUsername(respone.data?.username)
+                }else {
+                    Swal.fire({
+                        title: "System",
+                        text: "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
+                        icon: "error"
+                    });
                 }
             }
         }
