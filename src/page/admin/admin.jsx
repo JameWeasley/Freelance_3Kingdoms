@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from '../shared/nav'
+// import Navbar from '../shared/nav'
 
 export default function admin() {
 
@@ -131,7 +131,7 @@ export default function admin() {
   return (
     <>
 
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container" style={{ minHeight: '900px' }}>
         <div
           className="menu-list"

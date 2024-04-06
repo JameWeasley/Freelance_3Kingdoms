@@ -1,7 +1,8 @@
 const express = require("express")
 const cors = require("cors")
 const sql = require('mssql');
-const cookieSession = require('express-session')
+const path = require('path')
+const cookieSession = require('cookie-session')
 
 const app = express()
 const config = {
@@ -28,10 +29,14 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static('dist'))
 
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
+
 app.use(cookieSession({
-    secret: 'secret-key',
-    resave: false,
-    saveUninitialized: false
+    name: 'session',
+    keys: ["SHA256"],
+    maxAge: 24 * 60 * 60 * 1000
 }));
 
 app.post("/api/login" , async (req ,res ) => {

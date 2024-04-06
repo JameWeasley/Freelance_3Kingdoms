@@ -1,27 +1,21 @@
 import { useState , useEffect } from 'react'
-import Navbar from '../shared/nav'
 import Footer from '../shared/footer'
 import { useBetween } from 'use-between';
 import login from '../shared/state/login'
 import axios from 'axios';
 import urlpath from '../shared/state/urlpath'
+import changeurl from '../shared/state/urlpath'
+import { useNavigate } from 'react-router-dom'
 
 export default function register() {
+    const Location = useNavigate()
     const [ username , setUsername ] = useBetween(login)
 
-    const fetch = async () => {
-        const respone = await axios.post(`${urlpath()}/api/login` , {})
-
-        if (respone.status === 200) {
-            if (respone.data) {
-                setUsername(respone.data?.username)
-            }
-        }
-    }
-
     useEffect(() => {
-        fetch()
-    } , [])
+        if (username) {
+            Location("/")
+        }
+    }, [username])
 
     const loginActive = async () => {
         const username = document.querySelector("#login_username_input").value
@@ -33,7 +27,6 @@ export default function register() {
             })
 
             if (respone.status === 200) {
-                console.log(respone.data);
                 if (respone.data) {
                     setUsername(respone.data?.username)
                 }
@@ -41,11 +34,13 @@ export default function register() {
         }
     }
 
+    const changeurl = () => {
+        Location("/register")
+    }
+   
+
     return (
         <>
-
-            <Navbar/>
-            {username}
             <div className="container">
                 <div className="register-blog" style={{ border: '1px solid transparent', borderRadius: '20px', background: 'rgb(0 0 0 / 34%)', width: '450px', height: 'max-content', position: 'relative', margin: '10% auto', padding: '1rem' }}>
                     <div className="img-regis" style={{ textAlign: 'center' }}>
@@ -67,7 +62,7 @@ export default function register() {
                         </div>
 
                         <div className="login-btn" style={{ alignItems: 'center', textAlign: "center", padding: '1rem 0 0 0' }}>
-                            <button>สมัครสมาชิก</button>
+                            <button onClick={changeurl}>สมัครสมาชิก</button>
                         </div>
 
 

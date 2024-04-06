@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../shared/nav'
+// import Navbar from '../shared/nav'
 import Footer from '../shared/footer'
 
 export default function payment() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="container">
         <div className="pay-head">

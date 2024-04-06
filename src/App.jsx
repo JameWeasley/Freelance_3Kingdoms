@@ -11,23 +11,25 @@ import PaymentPage from './page/payment/payment'
 import AdminPage from './page/admin/admin'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
+import Navbar from './page/shared/nav'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
+      <Navbar />
       <Router>
-      <Routes>
-        <Route path="/" element={<IndexPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/item" element={<ItemPage />} />
-        <Route path="/payment" element={<PaymentPage />} />
-        <Route path="/admin" element={<AdminPage />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<IndexPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/item" element={<ItemPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
+      </Router>
     </>
   )
 }
